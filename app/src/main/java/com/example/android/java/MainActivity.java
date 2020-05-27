@@ -1,6 +1,7 @@
 package com.example.android.java;
 
 import android.animation.Animator;
+import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.graphics.drawable.AnimationDrawable;
@@ -29,11 +30,15 @@ public class MainActivity extends AppCompatActivity {
         ObjectAnimator animatorX = ObjectAnimator.ofFloat(imageView,
                 "scaleX", 1f, 2f)
                 .setDuration(1000);
-        animatorX.start();
         ObjectAnimator animatorY = ObjectAnimator.ofFloat(imageView,
                 "scaleY", 1f, 2f)
                 .setDuration(1000);
-        animatorY.start();
+        AnimatorSet set = new AnimatorSet();
+       // set.playTogether(animatorX, animatorY);
+        set.playSequentially(animatorX, animatorY);
+        set.setDuration(3000); //duration can be overwritten
+        set.start();
+
 
     }
 }
