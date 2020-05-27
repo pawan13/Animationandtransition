@@ -5,11 +5,21 @@
     android:layout_height="match_parent"
     tools:context="com.example.android.java.MainActivity">
 
-    <ImageView
-        android:id="@+id/animation"
+
+    <ScrollView
+        android:id="@+id/scrolllog"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/linearLayout"/>
+        android:layout_above="@+id/linearLayout"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="-46dp">
+
+        <TextView
+            android:id="@+id/tvlog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </ScrollView>
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -23,15 +33,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onStartButtonClick"
-            android:text="Start" />
+            android:onClick="onRuncodeButtonClick"
+            android:text="RunCode" />
         <Button
             android:id="@+id/btnStop-"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onStopButtonClick"
-            android:text="Stop" />
+            android:onClick="onClearButtonClick"
+            android:text="Clear" />
     </LinearLayout>
+
 
 </RelativeLayout>
