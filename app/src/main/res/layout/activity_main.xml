@@ -1,25 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.android.java.MainActivity">
 
-
-    <ScrollView
-        android:id="@+id/scrolllog"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/linearLayout"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="-46dp">
-
-        <TextView
-            android:id="@+id/tvlog"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </ScrollView>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/monkey0001" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -29,20 +22,15 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnRun"
+            android:id="@+id/btnbtnRun"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onRuncodeButtonClick"
-            android:text="RunCode" />
-        <Button
-            android:id="@+id/btnStop-"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="onClearButtonClick"
-            android:text="Clear" />
+            android:onClick="onRunButtonClick"
+            android:text="Run" />
     </LinearLayout>
+
+
 
 
 </RelativeLayout>
