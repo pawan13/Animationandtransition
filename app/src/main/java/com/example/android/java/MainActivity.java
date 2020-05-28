@@ -23,6 +23,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private ImageView imageView;
     private RelativeLayout canvas;
+    private  static final String TAG ="it'sanimation";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +44,34 @@ public class MainActivity extends AppCompatActivity {
        // animator.setInterpolator(new LinearInterpolator());
         // animator.setInterpolator(new AnticipateInterpolator());
         animator.setInterpolator(new BounceInterpolator());
+        animator.setRepeatCount(2);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                Log.i(TAG, "onAnimationUpdate: " + animation.getAnimatedValue());
+            }
+        });
+        animator.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+               Log.i(TAG, "onAnimatorStart");
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                Log.i(TAG, "onAnimatorEnd");
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+                Log.i(TAG, "onAnimatorRepeat");
+            }
+        });
         animator.start();
     }
 }
