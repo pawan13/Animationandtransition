@@ -28,12 +28,12 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnbtnRun"
+            android:id="@+id/btnSlide"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onButtonClick"
-            android:text="Run" />
+            android:text="Slide" />
     </LinearLayout>
 
 
